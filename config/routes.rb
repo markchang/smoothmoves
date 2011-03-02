@@ -1,4 +1,13 @@
 Smoothmoves::Application.routes.draw do
+  devise_for :users do
+    get "/login" => "devise/sessions#new"
+    get "/logout" => "devise/sessions#destroy"
+  end
+
+  resources :menus
+  match '/admin' => 'menus#index'
+  root :to => 'menus#current'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

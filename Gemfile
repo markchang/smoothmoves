@@ -9,3 +9,5 @@ group :development, :test do
   gem 'annotate'
   gem 'nifty-generators'
 end
+
+gem "mocha", :group => :test

@@ -1,0 +1,12 @@
+<% title "Menu" %>
+
+<p>
+  <strong>Description:</strong>
+  <%= @menu.description %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_menu_path(@menu) %> |
+  <%= link_to "Destroy", @menu, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", menus_path %>
+</p>

@@ -1,0 +1,25 @@
+<% title "Menus" %>
+
+<table>
+  <tr>
+    <th>Description</th>
+  </tr>
+  <% for menu in @menus %>
+    <tr>
+      <td><%= menu.description %></td>
+      <td><%= link_to "Show", menu %></td>
+      <td><%= link_to "Edit", edit_menu_path(menu) %></td>
+      <td><%= link_to "Destroy", menu, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Menu", new_menu_path %></p>
+
+<div class="user_menu">
+<% if user_signed_in? %>
+  <%= link_to('Logout', destroy_user_session_path) %>        
+<% else %>
+  <%= link_to('Login', new_user_session_path)  %>  
+<% end %>
+</div>

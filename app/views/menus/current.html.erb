@@ -1,0 +1,13 @@
+<div id="huge">
+	<% if @menu.nil? %>
+		No smoothies.
+	<% else %>
+		<%= @menu.description %>
+	<% end %>
+</div>
+
+<div id="timestamp">
+	<% if not @menu.nil? %>
+		fresh as of <%= time_ago_in_words @menu.created_at %> ago
+	<% end %>
+</div>
